@@ -1,0 +1,238 @@
+.cu {
+  --cu-muted: var(--text-weak, #929299);
+  --cu-border: var(--border-weak-base, #ffffff18);
+  color: var(--text-base, #dcdce0);
+  font-family: inherit;
+  font-size: 12px;
+}
+.cu-strip {
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-top: 1px solid var(--cu-border);
+}
+.cu,
+.cu * {
+  box-sizing: border-box;
+}
+.cu p {
+  margin: 0;
+}
+.cu button {
+  appearance: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  margin: 0;
+  line-height: 1;
+}
+.cu button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.cu button:focus-visible {
+  outline: 2px solid #818cf8;
+  outline-offset: 3px;
+}
+.cu-trigger {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  padding: 4px 5px;
+  min-height: 24px;
+}
+.cu-trigger:hover {
+  background: #88888815;
+}
+.cu-logo {
+  font-weight: 650;
+  letter-spacing: -0.3px;
+}
+.cu-mini {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.cu-mini-label {
+  font-size: 10px;
+  color: var(--cu-muted);
+}
+.cu-mini-reset {
+  font-size: 10px;
+  color: var(--cu-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.cu-track {
+  display: block;
+  width: 38px;
+  height: 4px;
+  border-radius: 9px;
+  background: #88888828;
+  overflow: hidden;
+}
+.cu-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.35s ease;
+}
+.cu-chevron {
+  display: inline-flex;
+  color: var(--cu-muted);
+}
+.cu-chevron svg {
+  width: 14px;
+  height: 14px;
+}
+.cu-dialog {
+  position: fixed;
+  inset: auto auto 40px 12px;
+  margin: 0;
+  width: 370px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 65px);
+  overflow: auto;
+  padding: 0;
+  border: 1px solid var(--cu-border);
+  border-radius: 14px;
+  background: var(--background-base, #202023);
+  box-shadow: 0 16px 60px #0006;
+}
+.cu-dialog::backdrop {
+  background: #0002;
+}
+.cu-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px 12px;
+}
+.cu-head-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 4px;
+}
+.cu-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cu-title strong {
+  font-size: 14px;
+}
+.cu-muted {
+  color: var(--cu-muted);
+  font-size: 11px;
+}
+.cu .cu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 7px;
+  color: var(--cu-muted);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+.cu-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.cu-icon:hover {
+  background: #88888820;
+}
+.cu-body {
+  padding: 4px 18px 18px;
+}
+.cu-window {
+  margin: 14px 0 20px;
+}
+.cu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.cu-window .cu-track {
+  width: 100%;
+  height: 7px;
+  margin: 9px 0;
+}
+.cu-percent {
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+}
+.cu-reset {
+  border-top: 1px solid var(--cu-border);
+  padding-top: 16px;
+}
+.cu-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  border: 1px solid var(--cu-border);
+  background: #88888812;
+  border-radius: 7px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+.cu-action:hover:not(:disabled) {
+  background: #88888825;
+}
+.cu-confirm {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #eab30812;
+  line-height: 1.5;
+}
+.cu-confirm .cu-row {
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+.cu p.cu-notice {
+  margin-top: 12px;
+  line-height: 1.5;
+  color: var(--cu-muted);
+}
+.cu-error,
+.cu p.cu-error {
+  color: #f0b65e;
+}
+.cu-spinning {
+  animation: cu-spin 1s linear infinite;
+}
+@keyframes cu-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cu-fill,
+  .cu .cu-icon {
+    transition: none;
+  }
+  .cu-spinning {
+    animation: none;
+  }
+}

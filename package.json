@@ -1,0 +1,41 @@
+{
+  "name": "codex-usage-desktop",
+  "version": "0.2.0",
+  "description": "Compact Codex subscription usage and reset controls for OpenCode Desktop.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YerayAlonso/opencode-codex-usage.git"
+  },
+  "homepage": "https://github.com/YerayAlonso/opencode-codex-usage#readme",
+  "bugs": {
+    "url": "https://github.com/YerayAlonso/opencode-codex-usage/issues"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "verify": "npm run format:check && npm run typecheck && npm test && npm run build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "prettier": "3.9.10",
+    "solid-js": "^1.9.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}
